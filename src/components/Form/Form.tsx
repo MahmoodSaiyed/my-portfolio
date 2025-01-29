@@ -108,7 +108,6 @@ export function Form() {
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-        <div style={{ display: 'flex', gap: '8px' }}>
         
           <input
             placeholder="Your Phone Number"
@@ -120,7 +119,6 @@ export function Form() {
             onChange={(e) => setPhone(e.target.value)}
             required
           />
-        </div>
         <ValidationError prefix="Phone" field="phone" errors={state.errors} />
 
         <textarea
