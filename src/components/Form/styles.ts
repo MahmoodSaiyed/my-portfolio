@@ -69,3 +69,45 @@ export const ContainerSucces = styled.div`
     color: #fbfbfb;
   }
 `
+
+export const PhoneInputWrapper = styled.div`
+  .react-tel-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .react-tel-input .form-control {
+    width: 100% !important;
+    height: 45px !important;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding-left: 50px !important;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+
+  .react-tel-input .form-control:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  .react-tel-input .flag-dropdown {
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ccc !important;
+    background-color: #f8f8f8 !important;
+  }
+
+  .react-tel-input .flag-dropdown:hover {
+    background-color: #e9ecef !important;
+  }
+
+  .react-tel-input .selected-flag {
+    padding: 10px !important;
+  }
+
+  .react-tel-input .selected-flag:focus {
+    outline: none;
+    box-shadow: none;
+  }
+`;

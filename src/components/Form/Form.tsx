@@ -3,31 +3,31 @@ import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
 import { useEffect, useState } from 'react'
 import validator from 'validator'
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 
 export function Form() {
   const [state, handleSubmit] = useForm('xknkpqry')
   const [validEmail, setValidEmail] = useState(false)
   const [message, setMessage] = useState('')
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
 
   function verifyEmail(email: string) {
-    if (validator.isEmail(email)) {
-      setValidEmail(true)
-    } else {
-      setValidEmail(false)
-    }
+    setValidEmail(validator.isEmail(email))
   }
 
   async function sendEmail(e: React.FormEvent) {
     e.preventDefault()
 
-    if (validEmail &&  message) {
+
+    if (validEmail && message && name && phone) {
       try {
-        await emailjs.send("service_j006t9d",
-          "template_khmsyoh",
-          { to_mail:email, message },
-          "vWSfDh9TyA0kqnFX3",
+        await emailjs.send(
+          'service_j006t9d',
+          'template_khmsyoh',
+          { to_mail: email, name, phone, message },
+          'vWSfDh9TyA0kqnFX3'
         )
         toast.success('Email successfully sent!', {
           position: toast.POSITION.BOTTOM_LEFT,
@@ -41,6 +41,10 @@ export function Form() {
           position: toast.POSITION.BOTTOM_LEFT,
         })
       }
+    } else {
+      toast.error('Please fill out all fields correctly.', {
+        position: toast.POSITION.BOTTOM_LEFT,
+      })
     }
   }
 
@@ -82,7 +86,17 @@ export function Form() {
         }}
       >
         <input
-          placeholder="Email"
+          placeholder="Your Name"
+          id="name"
+          type="text"
+          name="name"
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+        <input
+          placeholder="Your Email"
           id="email"
           type="email"
           name="email"
@@ -93,25 +107,32 @@ export function Form() {
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+        <div style={{ display: 'flex', gap: '8px' }}>
+        
+          <input
+            placeholder="Your Phone Number"
+            id="phone"
+            maxLength={10}
+            type="number"
+            name="phone"
+            pattern="^\d{7,15}$" // Ensures phone number format is valid
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+        </div>
+        <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+
         <textarea
           required
           placeholder="Send a message to get started."
           id="message"
           name="message"
-          onChange={(e) => {
-            setMessage(e.target.value)
-          }}
+          onChange={(e) => setMessage(e.target.value)}
         />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
 
-        <button
-          type="submit"
-          disabled={state.submitting || !validEmail || !message }
-        >
+        <button type="submit" disabled={state.submitting || !validEmail || !message || !name || !phone}>
           Submit
         </button>
       </form>

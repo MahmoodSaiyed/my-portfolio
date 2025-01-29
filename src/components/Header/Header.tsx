@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
 import Resume from '../../assets/Mahmood_Saiyed_Resume.docx'
+import { FaDownload } from 'react-icons/fa';
+
 export function Header() {
   const [isActive, setActive] = useState(false)
   function toggleTheme() {
@@ -40,8 +42,8 @@ export function Header() {
           <NavHashLink smooth to="#contact" onClick={closeMenu}>
             Contact
           </NavHashLink>
-          <a href={Resume} download className="button">
-            Resume
+          <a href={Resume}  download className="button">
+            Resume <FaDownload style={{ marginLeft: '8px' }}/>
           </a>
         </nav>
         <div

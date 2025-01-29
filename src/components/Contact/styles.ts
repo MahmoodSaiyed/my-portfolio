@@ -29,7 +29,7 @@ export const Container = styled.section`
       justify-content: center;
       width: 50%;
       max-width: 30rem;
-      gap: 2rem;
+      gap: 0.5rem;
       background-color: var(--green);
       border-radius: 1.4rem;
       padding: 1.6rem 2.8rem;
