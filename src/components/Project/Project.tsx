@@ -211,30 +211,38 @@ export function Project() {
 </ScrollAnimation>
 
 
-        {/* <ScrollAnimation animateIn="flipInX">
-          <div className="project">
-            <header>
-              <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b " stroke-width="1" stroke-linecap="round" stroke-linejoin="round" ><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-              <div className="project-links">
-                <a href="https://justmedicalbooks.com/" target="_blank" rel="noreferrer">
-                  <img src={externalLink} alt="Visit site" />
-                </a>
-              </div>
-            </header>
-            <div className="body">
-              <h3>MedicalBooks - Book Selling Site</h3>
-              <p>
-                This website sells medical books online and is popular with medical students. Medical students use it to buy books and acquire knowledge. The site has all kinds of medical books in one place.
-              </p>
-            </div>
-            <footer>
-              <ul className="tech-list">
-                <li>Wordpress</li>
-                <li>Woocommerce</li>
-              </ul>
-            </footer>
-          </div>
-        </ScrollAnimation> */}
+<ScrollAnimation animateIn="flipInX">
+  <div className="project">
+    <header>
+      <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <title>Folder</title>
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <div className="project-links">
+        <a href="https://github.com/MahmoodSaiyed/Vehicle-Motion" target="_blank" rel="noreferrer">
+          <img src={githubIcon} alt="GitHub Repository" />
+        </a>
+      </div>
+    </header>
+    <div className="body">
+      <h3>Estimation of Vehicle Motion in Traffic Videos Using Optical Flow</h3>
+      <p>
+        This project focuses on estimating vehicle motion in traffic videos using Optical Flow techniques. 
+        It helps analyze traffic patterns by detecting and tracking vehicle movements, improving 
+        traffic monitoring and management systems. The project utilizes OpenCV and Python to process 
+        video frames and extract motion-related insights.
+      </p>
+    </div>
+    <footer>
+      <ul className="tech-list">
+        <li>OpenCV</li>
+        <li>Python</li>
+        <li>Optical Flow</li>
+      </ul>
+    </footer>
+  </div>
+</ScrollAnimation>
+
 
         {/* <ScrollAnimation animateIn="flipInX">
           <div className="project">
