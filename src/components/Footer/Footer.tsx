@@ -12,12 +12,12 @@ export function Footer() {
         <span>www.mahmood</span>
         <span>saiyed.in</span>
       </a>
-      <div>
+      {/* <div>
         <p>
           This Website was made with <img src={reactIcon} alt="React" />
-          {/* <span>❤️</span> */}
+          <span>❤️</span>
         </p>
-      </div>
+      </div> */}
       <div className="social-media">
         <a
           href="https://www.linkedin.com/in/mahmoodsaiyed/"
